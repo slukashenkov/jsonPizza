@@ -1,0 +1,84 @@
+{
+  "body": {
+    "skin": ["rudy","bumpy","hairy"],
+    "trunk": {"build":"heavy",
+                    "development":"muscular"},
+    "head": {
+      "ears": {
+        "quantity": 1,
+        "items": [
+          {
+            "ear": {
+              "status": false,
+               "id": "left"
+            }
+          },
+          {
+            "ear": {
+              "status": true,
+              "shape": "triangular",
+              "id": "right"
+            }
+          }
+        ]
+      },
+      "nose":{"quantity": 1,
+                    "shape":["meaty","potato"]} ,
+      "eyes": {
+        "quantity": 2,
+        "items": [
+          {"eye":{
+            "id": "left",
+            "colour": "blue",
+            "status": true
+          }},
+          {"eye":{
+            "id": "left",
+            "colour": "green",
+            "status": true
+          }}
+        ]
+      }
+    },
+    "limbs": {
+      "quantity": 3,
+      "legs": {
+        "quantity": 1,
+        "items": [
+          {
+            "leg": {
+              "status": false,
+              "id": "right"
+            }
+          },
+          {
+            "leg": {
+              "status": true,
+              "length": 14.3,
+              "id": "left"
+            }
+          }
+        ]
+      },
+      "hands": {
+        "quantity": 2,
+        "items": [
+          {
+            "hand": {
+              "status": true,
+              "length": 19,
+              "id": "right"
+            }
+          },
+          {
+            "hand": {
+              "status": true,
+              "length": 19,
+              "id": "left"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "body": {
+    "skin": "array of string qulifiers -> ["rudy|fair|pale","bumpy|smooth","hairy|hairless"],
+    "trunk": {"build":"set of string qualifiers -> heavy|slight|normal",
+      "development":"set of string qualifiers -> muscular|underdeveloped|normal"},
+    "head": {
+      "ears": {
+        "quantity": "number between 0-2",
+        "items": [ <-array of ear objects
+          {
+            "ear": {
+              "status": "boolean describing whether an ear is present",
+              "id": "String identifier left| right"
+            }
+          }...
+        ]
+      },
+      "nose":{"quantity": "number between 0-1",
+        "shape":"array of string qulifiers -> ["bony|meaty","potato|triangular|beak|button"] ,
+      "eyes": {
+        "quantity": "number between 0-2",
+        "items": [ <-array of eye objects
+          {"eye":{
+            "id": "String identifier left| right",
+            "colour": "set of string qualifiers -> blue|grey|brown|green",
+            "status": "boolean describing whether an eye is present",
+          }}...
+        ]
+      }
+    },
+    "limbs": {
+      "quantity": 3,
+      "legs": {
+        "quantity": 1,
+        "items": [ <-array of leg objects with similar characteristics as above objects
+          {
+            "leg": {
+              "status": false,
+              "id": "right"
+            }
+          }....
+        ]
+      },
+      "hands": {
+        "quantity": 2,
+        "items": [ <-array of leg objects with similar characteristics as above objects
+          {
+            "hand": {
+              "status": true,
+              "length": 19,
+              "id": "right"
+            }
+          }...
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+Introduction:
+----------------
+    Class under test emulating a pizzeria accepts an order in a form of PizzaRecipe class and returns result as Order class.
+    Any given recipe describes a set of ingredients to be used to fulfill an order.
+    There are some restrictions on ingredients compatibility (see assignment file for details).
+    Each available ingredient and the restrictions associated with it is described in Ingredients enum used internally by the class under test.
+
+    The overall recipe is expressed as a set of binary flags:
+            for example
+                Ingredient 01: 0001
+                Ingredient 02: 0010
+                Ingredient 03: 0000 - not used
+                Ingredient 04: 0000 - not used
+                and
+                the resulting recipe:
+                0011 -> decimal 3 describes a positive scenario
+            or
+                 Ingredient 01: 0001
+                 Ingredient 02: 0010
+                 Ingredient 03: 0100 - used but incompatible to Ingridient 02
+                 Ingredient 04: 0000 - not used
+                 and
+                 the resulting recipe:
+                 0111 -> decimal 7 describes a negative scenario
+
+    According to specifications expressed in assignment file only 3 ingredients have restrictions on the combinations thereof.
+    Therefore, other potential ingredients become irrelevant for the application`s logic and consequently for the tests.
+    Their list can be arbitrarily long and can be controlled by adding values in the Ingredients enum.
+    Currently only 6 ingredients are defined there, which makes total of 3 significant for application`s logic and 3 meaningless ones.
+    That is done for brevity and reasons described above and despite contradiction to 11 ingredients prescribed in the specification.
+
+
+test case 01:
+-----------------
+Name:
+        Negative Test for Incompatible ingredients
+Preconditions:
+        1) Class under test is instantiated (JsonPizzaJoint)
+        2) Data for each parametrized test is available in src\test\resources inside project directory in the form of text files.
+        The data files`s names follow a template: testRecipe0[index to be dynamically replaced].json
+        Each individual dataset is stored as json object inside a corresponding text file.
+        3) Each test case for execution is marked with @Parameters(method = [method name]) and uses appropriate method to obtain test data.
+
+Test data:
+       negative values
+       6, 7, 11, 14, 15
+Test steps:
+        1) Call methods acceptOrder().serveOrder() on the class under test using each negative data set in turn
+        2) Verity that Class under test sets resulting Order object status to False
+        3) Verify that Class under test sets message indicating incompatibility of the ingredients
+
+Expected result:
+        1) Order status is set to false
+        2) Text field inside the class indicates the failure
+
+
+test case 02:
+-----------------
+Name:
+        Positive Test for Compatible ingredients
+Preconditions:
+        1) Class under test is instantiated (JsonPizzaJoint)
+        2) Data for each parametrized test is available in src\test\resources inside project directory in the form of a text file.
+        The data files follow a template: testRecipe0[index to be dynamically replaced].json
+        Each individual dataset is stored as json object inside corresponding text file.
+Test data:
+positive values
+3, 5, 9, 12, 13
+
+Test steps:
+        1) Call methods acceptOrder().serveOrder() on the class under test using each positive dataset in turn
+        2) Verity that that Class under test sets resulting Order object status to True
+        3) Verify that that Class under test sets message indicating successful order
+
+Expected result:
+        1) Order status is set to true
+        2) Text field inside the class indicates an order`s success

@@ -1,0 +1,88 @@
+{
+  "body": {
+    "skin": ["pale","smooth","hairless"],
+    "trunk": {"build":"slight",
+                    "development":"underdeveloped"},
+    "head": {
+      "ears": {
+        "quantity": 2,
+        "items": [
+          {
+            "ear": {
+              "status": true,
+              "shape": "round",
+              "id": "left"
+            }
+          },
+          {
+            "ear": {
+              "status": true,
+              "shape": "square",
+              "id": "right"
+            }
+          }
+        ]
+      },
+      "nose":{"quantity": 1,
+                    "shape":["bony","triangular"]} ,
+      "eyes": {
+        "quantity": 2,
+        "items": [
+          {"eye":{
+            "id": "left",
+            "colour": "grey",
+            "status": true
+          }
+          },
+          {"eye":{
+            "id": "left",
+            "colour": "grey",
+            "status": true
+          }}
+        ]
+      }
+    },
+    "limbs": {
+      "quantity": 4,
+      "legs": {
+        "quantity": 2,
+        "items": [
+          {
+            "leg": {
+              "status": true,
+              "length": 15,
+              "id": "right"
+            }
+          },
+          {
+            "leg": {
+              "status": true,
+              "length": 14.3,
+              "id": "left"
+            }
+          }
+        ]
+      },
+      "hands": {
+        "quantity": 2,
+        "items": [
+          {
+            "hand": {
+              "status": true,
+              "length": 10,
+              "id": "right"
+            }
+          },
+          {
+            "hand": {
+              "status": true,
+              "length": 14.3,
+              "id": "left"
+            }
+          }
+        ]
+      }
+    }
+
+  }
+}
